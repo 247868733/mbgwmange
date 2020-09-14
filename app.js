@@ -7,6 +7,8 @@ const bodyparser = require('koa-bodyparser');//post请求参数的处理
 const logger = require('koa-logger');//koa-logger提供了输出请求日志的功能，包括请求的url、状态码、响应时间、响应体大小等信息
 const session = require('koa-session');//session中间件
 
+const db=require('./db/index') //连接数据库
+
 
 app.keys = ['some secret hurr'];
 /** 签名*/
@@ -30,6 +32,14 @@ const users = require('./routes/users');
 
 // error handler
 onerror(app);
+
+
+//配置 swaggerJSDoc
+
+
+
+
+
 
 // post 解析参数中间件
 app.use(bodyparser({

@@ -1,5 +1,4 @@
 const router = require('koa-router')()
-
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
     title: 'Hello Koa 2!'
@@ -26,8 +25,9 @@ router.put('/put', async (ctx, next) => {
   }
 })
 router.delete('/delete/:id', async (ctx, next) => {
-  let postParam = ctx.request.body //获取post提交的数据
-  console.log(postParam)
+  console.log('ctx :>> ', ctx);
+  var id = ctx.params
+  console.log(id)
   ctx.body = {
     title: '猪儿虫'
   }
